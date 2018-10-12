@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
-    get "/mini_url" => "mini#capstone"
+    get "/all_products" => "products#everything"
   end 
 end
