@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
     get "/all_products" => "products#everything"
+    get "/first_piece" => "products#first_piece"
+    get "/second_piece" => "products#second_piece"
+    get "/third_piece" => "products#third_piece"
   end
 end
