@@ -1,3 +1,5 @@
 class Api::ProductsController < ApplicationController
-  def
-end
+  def everything
+    render "furniture.json.jbuilder"
+  end
+end 
