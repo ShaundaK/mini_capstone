@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  def everything
+  def index
     @products = Product.all
     render "furniture.json.jbuilder"
   end
