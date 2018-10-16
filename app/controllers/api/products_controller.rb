@@ -1,17 +1,21 @@
 class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
-    render "furniture.json.jbuilder"
+    render "index.json.jbuilder"
   end
 
-  def piece_one
-    @products = Product.first
-    render "furniture_one.json.jbuilder"
+  def show
+    #showing one recipe
+    product_id =params[:id]
+    @product = Product.find_by(id: product_id)
+    render "show.json.jbuilder"
   end
 
-  def piece_two
-    @products = Product.second
-    render "furniture_two.json.jbuilder"
+  def create
+    #create a new product
+    @product = Product.new(name: "couch", price: 100, image_url: "", description: "a comfy red couch")
+    @product.save
+    render "show.json.jbuilder"
   end
   
   def piece_three
