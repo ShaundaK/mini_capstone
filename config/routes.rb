@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
     #index
-    # get "/products" => "products#index"
+    get "/products" => "products#index"
     #show
     # get "/products/:id" => "products#show"
     #create
-    # post "/products" => "products#create"
+    # post "products" => "products#create"
     #update
-    patch "products/:id" => "products#update"
-    # get "/third_piece" => "products#third_piece"
+    # patch "products/:id" => "products#update"
+    #destroy
+    delete "/products/:id" => "products#destroy"
   end
 end
