@@ -2,9 +2,14 @@ Rails.application.routes.draw do
   # STEP 1: A ROUTE triggers a controller action
   # verb "/urls" => "namespace/controllers#action"
   namespace :api do
+    #index
     # get "/products" => "products#index"
+    #show
     # get "/products/:id" => "products#show"
-    post "/products" => "products#create"
+    #create
+    # post "/products" => "products#create"
+    #update
+    patch "products/:id" => "products#update"
     # get "/third_piece" => "products#third_piece"
   end
 end

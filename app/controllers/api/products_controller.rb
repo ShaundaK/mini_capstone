@@ -18,8 +18,16 @@ class Api::ProductsController < ApplicationController
     render "show.json.jbuilder"
   end
   
-  def piece_three
-    @products = Product.third
-    render "furniture_three.json.jbuilder"
+  def update
+    #get the correct product(same as show)
+    product_id = params[:id]
+    @product = Product.find_by(id: product_id)
+    #change the product - like create a little
+    @product.name = "super couch"
+    @product.price = 200
+    @product.image_url = ""
+    @product.description = "a gigantic, comfy couch"
+    @product.save
+    render "show.json.jbuilder"
   end
 end 
