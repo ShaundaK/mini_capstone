@@ -34,6 +34,7 @@ class Api::ProductsController < ApplicationController
     render "show.json.jbuilder"
     else
       render "error.json.jbuilder"
+    end
   end 
 
     def destroy
