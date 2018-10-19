@@ -14,8 +14,11 @@ class Api::ProductsController < ApplicationController
   def create
     #create a new product
     @product = Product.new(name: "couch", price: 100, image_url: "", description: "a comfy red couch")
-    @product.save
-    render "show.json.jbuilder"
+    if @product.save
+      render "show.json.jbuilder"
+    else
+      render "error.json.jbuilder"
+    end
   end
   
   def update
@@ -27,8 +30,10 @@ class Api::ProductsController < ApplicationController
     @product.price = 200
     @product.image_url = ""
     @product.description = "a gigantic, comfy couch"
-    @product.save
+    if @product.save
     render "show.json.jbuilder"
+    else
+      render "error.json.jbuilder"
   end 
 
     def destroy
