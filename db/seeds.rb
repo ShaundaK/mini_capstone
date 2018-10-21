@@ -1,5 +1,5 @@
-# Product.create!([
-#   {name: "chair", price: 30, image_url: "", description: "a beautiful wooden chair"},
-#   {name: "super couch", price: 200, image_url: "", description: "a gigantic, comfy couch"},
-#   {name: "couch", price: 100, image_url: "", description: "a comfy red couch"}
+Product.create!([
+  {name: "chair", price: "30.0", image_url: "", description: "a beautiful wooden chair", in_stock?: nil},
+  {name: "super couch", price: "200.0", image_url: "", description: "a gigantic, comfy couch", in_stock?: nil},
+  {name: "couch", price: "100.0", image_url: "", description: "a comfy red couch", in_stock?: nil}
 ])
