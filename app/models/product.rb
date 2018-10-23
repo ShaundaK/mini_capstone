@@ -23,4 +23,8 @@ class Product < ApplicationRecord
   def in_stock?
     return true
   end
+
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
 end

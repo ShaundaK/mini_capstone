@@ -3,3 +3,4 @@ Product.create!([
   {name: "super couch", price: "200.0", image_url: "", description: "a gigantic, comfy couch", in_stock?: nil},
   {name: "couch", price: "100.0", image_url: "", description: "a comfy red couch", in_stock?: nil}
 ])
+
