@@ -16,7 +16,7 @@ class Api::ProductsController < ApplicationController
 
   def create
     #create a new product
-    @product = Product.new(name: "couch", price: 100, image_url: "", description: "a comfy red couch")
+    @product = Product.new(name: "couch", price: 100, description: "a comfy red couch")
     if @product.save
       render "show.json.jbuilder"
     else
