@@ -4,3 +4,11 @@ Product.create!([
   {name: "couch", price: "100.0", image_url: "", description: "a comfy red couch", in_stock?: nil}
 ])
 
+
+products = Product.order(:id)
+
+products.each do |product|
+p product.image_url
+image = Image.new(url: product.image_url, product_id: product.id)
+image.save
+end
