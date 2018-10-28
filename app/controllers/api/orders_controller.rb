@@ -1,11 +1,20 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user
   def create
     # p current_user
+    @orders = current_user.orders
+    render :json => @orders
+    # if current_user
+    #   @orders = current_user.orders
+    #   render :json => @orders
+    # else
+    #   render json: [], status: unauthorized
     @order = Order.new(
       user_id: current_user.id, 
       product_id: params[:product_id],
       quantity: params[:quantity]
       )
+     
     
     @product = @order.product 
     @order.subtotal = @product.price * @order.quantity
@@ -20,5 +29,10 @@ class Api::OrdersController < ApplicationController
     # @orders = Order.where(user_id: current_user.id)
     @orders = current_user.orders 
     render :json => @orders 
+    # if current_user
+    #   @orders = current_user.orders
+    #   render :json => @orders
+    # else
+    #   render json: [], status: :unauthorized
   end
 end
