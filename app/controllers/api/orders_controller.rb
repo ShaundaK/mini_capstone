@@ -1,5 +1,5 @@
 class Api::OrdersController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user only: [:create, :delete, :update]
   def create
     # p current_user
     @orders = current_user.orders
