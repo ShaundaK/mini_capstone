@@ -1,5 +1,7 @@
 class Api::ProductsController < ApplicationController
   def index
+    p 'current_user'
+    p current_user
     # @products = Product.all 
     search_term = params[:user_input]
     @products = Product.where('name LIKE ?,' "%#{search_term}%")
@@ -16,7 +18,11 @@ class Api::ProductsController < ApplicationController
 
   def create
     #create a new product
-    @product = Product.new(name: "couch", price: 100, description: "a comfy red couch")
+    @product = Product.new(
+      name: params[input_name], 
+      price: params[input_price], 
+      description: params[input_description]
+    )
     if @product.save
       render "show.json.jbuilder"
     else
