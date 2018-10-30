@@ -19,9 +19,9 @@ class Api::ProductsController < ApplicationController
   def create
     #create a new product
     @product = Product.new(
-      name: params[input_name], 
-      price: params[input_price], 
-      description: params[input_description]
+      name: params[:input_name], 
+      price: params[:input_price], 
+      description: params[:input_description]
     )
     if @product.save
       render "show.json.jbuilder"
