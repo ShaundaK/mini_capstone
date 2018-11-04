@@ -35,10 +35,10 @@ class Api::ProductsController < ApplicationController
     product_id = params[:id]
     @product = Product.find_by(id: product_id)
     #change the product - like create a little
-    @product.name = "super couch"
-    @product.price = 200
-    @product.image_url = ""
-    @product.description = "a gigantic, comfy couch"
+    @product.name = params[:input_name] || @product.name
+    @product.price = params[:input_price] || @product.price
+    @product.image = params[:input_image] || @product.image
+    @product.description = params[:input_description] || @product.description
     if @product.save
     render "show.json.jbuilder"
     else
