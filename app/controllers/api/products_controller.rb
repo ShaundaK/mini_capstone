@@ -12,7 +12,7 @@ class Api::ProductsController < ApplicationController
   def show
     #showing one recipe
     product_id =params[:id]
-    @product = Product.find_by(id: product_id)
+    @product = Product.find_by(id: params[:id])
     render "show.json.jbuilder"
   end
 
@@ -32,7 +32,7 @@ class Api::ProductsController < ApplicationController
   
   def update
     #get the correct product(same as show)
-    product_id = params[:id]
+    product= params[:id]
     @product = Product.find_by(id: product_id)
     #change the product - like create a little
     @product.name = params[:input_name] || @product.name
@@ -48,7 +48,7 @@ class Api::ProductsController < ApplicationController
 
     def destroy
       #get the product
-      product_id = params[:id]
+      # product_id = params[id: params [:id]
       @product = Product.find_by(id: product_id)
       #destroy the product
       @product.destroy
