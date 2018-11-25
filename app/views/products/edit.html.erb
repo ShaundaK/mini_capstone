@@ -1,4 +1,22 @@
-<form action="/products/<%= @product.id %>" method="post">
+<form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+</form><form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+</form><form action="/products/<%= @product.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <p>enter the product name<input type="text" value="<%= @product.name %>" name="name"></p>
   <p>enter the product's description<input type="text" value="<%= @product.description %>" name="description"></p>
